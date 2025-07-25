@@ -17,7 +17,7 @@ const App = () => {
   
   const fetchMovieDetails = async (imdbID) => {
     try {
-      const res = await fetch(`http://www.omdbapi.com/?apikey=${API_KEY}&i=${imdbID}&plot=full`);
+      const res = await fetch(`https://www.omdbapi.com/?apikey=${API_KEY}&i=${imdbID}&plot=full`);
       const data = await res.json();
       if (data.Response === "True") {
         setSelectedMovie(data);
@@ -39,7 +39,7 @@ const App = () => {
     setError(null);
 
     try {
-      const res = await fetch(`http://www.omdbapi.com/?apikey=${API_KEY}&s=${query}`);
+      const res = await fetch(`https://www.omdbapi.com/?apikey=${API_KEY}&s=${query}`);
       const data = await res.json();
       if (data.Response === "True") {
         setMovies(data.Search);
